@@ -1,0 +1,26 @@
+# Binaries
+gh-prune
+*.exe
+
+# Build output
+dist/
+build/
+bin/
+
+# Go
+vendor/
+go.work
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
