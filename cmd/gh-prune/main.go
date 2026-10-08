@@ -39,8 +39,8 @@ Use --dry-run to preview what would be deleted without making changes.`,
 	rootCmd.Flags().IntVar(&daysOld, "days", 7, "Only delete branches merged more than N days ago")
 	rootCmd.Flags().StringSliceVar(&protect, "protect", []string{"main", "master", "develop", "release"}, "Branch names to never delete")
 
-	rootCmd.MarkFlagRequired("owner")
-	rootCmd.MarkFlagRequired("repo")
+	_ = rootCmd.MarkFlagRequired("owner")
+	_ = rootCmd.MarkFlagRequired("repo")
 
 	if err := rootCmd.Execute(); err != nil {
 		log.Fatal(err)
