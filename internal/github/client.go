@@ -62,7 +62,8 @@ func (c *Client) GetMergedBranches(ctx context.Context, owner, repo, defaultBran
 			var mergedAt *time.Time
 			for _, pr := range prs {
 				if pr.GetMerged() && pr.MergedAt != nil {
-					mergedAt = pr.MergedAt
+					t := pr.MergedAt.Time // github.Timestamp embeds time.Time
+					mergedAt = &t
 					break
 				}
 			}
